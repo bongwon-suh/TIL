@@ -44,3 +44,17 @@
 - 벡터
 - 포인터
 - 동적 할당 메모리
+
+
+
+### sep 09, 2020
+
+[c++](https://github.com/bongwon-suh/TIL/blob/master/c%2B%2B/20200909.md)
+
+[c++ source](https://github.com/bongwon-suh/TIL/tree/master/c%2B%2B/20200909)
+
+- 동적 할당 메모리
+- 객체의 동적 생성
+- 객체전달
+- 복사 생성자
+- 상속
