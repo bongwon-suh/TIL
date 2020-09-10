@@ -54,7 +54,35 @@
 [c++ source](https://github.com/bongwon-suh/TIL/tree/master/c%2B%2B/20200909)
 
 - 동적 할당 메모리
+
 - 객체의 동적 생성
+
 - 객체전달
+
 - 복사 생성자
+
 - 상속
+
+  ----------
+
+[ML](https://github.com/bongwon-suh/TIL/blob/master/AI/ML/20200909.md)
+
+- 머신러닝 설치
+
+
+
+### sep 10, 2020
+
+[arduino](https://github.com/bongwon-suh/TIL/blob/master/arduino/20200910.md)
+
+[c++ source](https://github.com/bongwon-suh/TIL/tree/master/arduino/20200910)
+
+- LED
+
+  -----------------------------------
+
+[ML](https://github.com/bongwon-suh/TIL/blob/master/AI/ML/20200910.md)
+
+[ML source](https://github.com/bongwon-suh/TIL/tree/master/AI/ML/20200910)
+
+- Linear Regression
