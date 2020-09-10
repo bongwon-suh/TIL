@@ -75,7 +75,7 @@
 
 [arduino](https://github.com/bongwon-suh/TIL/blob/master/arduino/20200910.md)
 
-[c++ source](https://github.com/bongwon-suh/TIL/tree/master/arduino/20200910)
+[arduino source](https://github.com/bongwon-suh/TIL/tree/master/arduino/20200910)
 
 - LED
 
