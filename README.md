@@ -63,7 +63,7 @@
 
 - 상속
 
-  ----------
+  
 
 [ML](https://github.com/bongwon-suh/TIL/blob/master/AI/ML/20200909.md)
 
@@ -79,10 +79,23 @@
 
 - LED
 
-  -----------------------------------
+  
 
 [ML](https://github.com/bongwon-suh/TIL/blob/master/AI/ML/20200910.md)
 
 [ML source](https://github.com/bongwon-suh/TIL/tree/master/AI/ML/20200910)
 
 - Linear Regression
+
+
+
+### sep 11, 2020
+
+[arduino](https://github.com/bongwon-suh/TIL/blob/master/arduino/20200911.md)
+
+[arduino source](https://github.com/bongwon-suh/TIL/tree/master/arduino/20200911)
+
+- LED
+- 3색 LED
+- 1602 LCD
+
