@@ -99,3 +99,10 @@
 - 3색 LED
 - 1602 LCD
 
+
+
+[ML](https://github.com/bongwon-suh/TIL/blob/master/AI/ML/20200911.md)
+
+[ML source](https://github.com/bongwon-suh/TIL/tree/master/AI/ML/20200911)
+
+- Gradient descent algorithm
