@@ -106,3 +106,17 @@
 [ML source](https://github.com/bongwon-suh/TIL/tree/master/AI/ML/20200911)
 
 - Gradient descent algorithm
+
+
+
+### sep 12, 2020
+
+
+
+[ML](https://github.com/bongwon-suh/TIL/blob/master/AI/ML/20200912.md)
+
+[ML source](https://github.com/bongwon-suh/TIL/tree/master/AI/ML/20200912)
+
+- Multi-variable linear regression
+- Load data from file
+
