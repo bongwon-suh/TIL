@@ -122,9 +122,79 @@ Mat 클래스는 `=` 연산자 재정의 또는 `Mat::setTo()`함수를 이용�
 
 - s : 행렬 원소에 설정할 값
 - 반환값 : 값이 설정된 Mat 객체의 참조
-
 - value : 행렬 원소에 설정할 값
 - mask : 마스크 행렬. 마스크 행렬의 원소가 0이 아닌 위치에서만 value값이 설정
   행렬 전체 원소값을 설정하려면 noArray() 또는 Mat()을 지정
 - 반환값 : Mat 객체의 참조
+
+
+
+### 행렬의 복사
+
+```c++
+Mat Mat::clone() const;
+```
+
+- 반환값 : *this 행렬의 복사본
+
+```c++
+void Mat::copyTo(OutputArray m) const;
+void Mat::copyTo(OutputArray m), InputArray const;
+```
+
+- m : 복사본이 저장될 행렬. 만약 *this 행렬과 크기 및 타입이 다르면 메모리를 새로 할당한 후 픽셀 값을 복사
+- mask : 마스크 행렬. 행렬의 원소 값이 0이 아닌 좌표에서만 행렬 원소를 복사
+
+
+
+### 부분 행렬 추출
+
+```c++
+Mat Mat::operator()(const Rect& roi) const;
+Mat Mat::operator()(Range rowRange, Range colRange)const;
+```
+
+- roi : 사각형 관심영역
+- rowRange : 관심 행 범위
+- colRange : 관심 열 범위
+- 반환값 : 추출한 부분 행렬 또는 영상. 부분 영상의 픽셀 데이터를 서로 공유
+
+Mat 클래스의 괄호 연산자를 이용하여 얻은 부분 영상은 얕은 복사 형식이기 때문에 추출한 부분의 픽셀 값을 변경하면 원본 영상의 픽셀 값도 함께 변경
+
+
+
+```c++
+Mat Mat::rowRange(int startrow, int endrow) const;
+Mat Mat::rowRange(const Range& r) const;
+```
+
+- startrow : 추출할 행 범위 시작번호
+- endrow : 추출할 행 범위 끝번호
+- r : 추출할 행 범위
+- 반환값 : 지정한 행 범위에 해당하는 행렬
+
+```c++
+Mat Mat::colRange(int startcol, int endcol) const;
+Mat Mat::colRange(const Range& r) const;
+```
+
+- startrow : 추출할 열 범위 시작번호
+- endrow : 추출할 열 범위 끝번호
+- r : 추출할 열 범위
+- 반환값 : 지정한 열 범위에 해당하는 행렬
+
+Mat행렬에서 특정 범위의 행 또는 열을 부분 행렬로 추출하고자 할 때 사용
+
+
+
+```c++
+Mat Mat::row(int y) const;
+Mat Mat::col(int x) const;
+```
+
+- y : 부분행렬로 추출할 행 번호
+- x : 부분행렬로 추출할 열 번호
+- 반환값 추출할 부분 행렬(얕은 복사)
+
+Mat행렬로부터 하나의 행 또는 열을 추출하여 1행짜리 또는 1열짜리 행렬을 만듬
 
