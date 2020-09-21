@@ -198,3 +198,96 @@ Mat Mat::col(int x) const;
 
 Mat행렬로부터 하나의 행 또는 열을 추출하여 1행짜리 또는 1열짜리 행렬을 만듬
 
+
+
+### 행렬의 원소 값 참조
+
+``` c++
+template<typename _Tp> -Tp& Mat::at(int y, int x);
+```
+
+행과 열을 나타내는 두 개의 정수를 인자로 받아 해당 위치의 원소 값을 참조 형식으로 반환함
+
+- y : 참조할 행 번호
+- x : 참조할 열 번호
+- 반환값 : y번째 행, x번째 열의 원소 값
+
+
+
+``` c++
+template<typename _Tp>
+_Tp* Mat::ptr(int y);
+```
+
+- y : 참조할 행 번호
+- 반환값 : y번째 행의 시작 주소
+
+
+
+### 행렬 정보 참조하기
+
+| Mat 클래스 멤버 함수             | 설명                                                         |
+| -------------------------------- | ------------------------------------------------------------ |
+| int Mat::channels() const;       | 행렬의 채널 수를 반환                                        |
+| int Mat::depth() const;          | 행렬의 깊이 반환 CV_8U, CV_32F                               |
+| size_t Mat::elemSize() const;    | 한 개의 원소가 차지하는 메모리 크기를 바이트 단위로 반환     |
+| size_t Mat::elemSizel() const;   | 하나의 채널에서 한 개의 원소가 차지하는 메모리 크기를 바이트 단위로 반환 |
+| bool Mat::empty() const;         | 비어있는 행렬이면 true 반환                                  |
+| bool Mat::isContinuous()  const; | 각 행의 원소가 연속적으로 저장되어 있으면 true 반환          |
+| bool Mat::isSubmatrix() const;   | 행렬이 다른 행렬의 부분 행렬이면 true 반환                   |
+| Size Mat::size() const;          | 행렬 크기를 Size 타입으로 반환                               |
+| size_t Mat::total() const;       | 전체 원소 개수를 반환                                        |
+| int Mat::type() const;           | 행렬의 타입을 반환                                           |
+
+
+
+### 크기 및 타입 변환 함수
+
+```c++
+void Mat::convertTo(OutputArray m, int rtype, double alpha=1, double beta=0) const;
+```
+
+- m : 출력 행렬
+- rtype : 원하는 출력 행렬의 타입
+- alpha : 추가적으로 곱할 값
+- beta : 추가적으로 더할 값
+
+
+
+```c++
+Mat Mat::reshape(int cn, int rows=0) const;
+```
+
+- cn : 새로운 채널 수
+- rows : 새로운 행의 수
+- 반환값 : 모양이 변경된 행렬
+
+
+
+```c++
+void Mat::resize(size_t sz);
+void Mat::resize(size_t sz, const Scalar& s);
+```
+
+- sz : 새로운 행의 개수
+- s : 새로 추가되는 행 원소의 초기값
+
+
+
+```c++
+template<typename _Tp> void Mat::push_back(const _Tp& elem);
+template<typename _Tp> void Mat::push_back(const Mat_<_Tp>& elem);
+template<typename _Tp> void Mat::push_back(const std::vector<_Tp>& elem);
+void Mat::push_back(const Mat& m);
+```
+
+- elem : 행렬의 맨 마지막 행에 추가할 원소
+- m : 행렬의 맨 마지막 행에 추가할 행렬
+
+
+
+```c++
+void Mat::pop_back(size_t nelems=1);
+```
+
+- nelems : 제거할 행 개수

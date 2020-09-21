@@ -75,11 +75,87 @@ void MatOp3() {
 	destroyAllWindows();
 }
 
+void MatOp4() {
+	Mat mat1 = Mat::zeros(3, 4, CV_8UC1);
+
+	for (int j = 0; j < mat1.rows; j++) {
+		for (int i = 0; i < mat1.cols; i++) {
+			mat1.at<uchar>(j, i)++;
+		}
+	}
+	
+	for (int j = 0; j < mat1.rows; j++) {
+		uchar* p = mat1.ptr<uchar>(j);
+		for (int i = 0; i < mat1.cols; i++) {
+			p[i]++;
+		}
+	}
+	for (MatIterator_<uchar> it = mat1.begin<uchar>(); it != mat1.end<uchar>(); ++it) {
+		(*it)++;
+	}
+	cout << "mat:\n" << mat1 << endl;
+}
+
+void MatOp5() {
+	Mat img1 = imread("lenna.bmp");
+
+	cout << " width : " << img1.cols << endl;
+	cout << " height : " << img1.rows << endl;
+	cout << "channels : " << img1.channels() << endl;
+
+	if (img1.type() == CV_8UC1)
+		cout << "img1 is a grayscale image" << endl;
+	else if (img1.type() == CV_8UC3)
+		cout << "true color" << endl;
+
+	float data[] = { 2.f, 1.414f, 3.f, 1.732f };
+	Mat mat1(2, 2, CV_32FC1, data);
+	cout << "mat1:\n" << mat1 << endl;
+}
+
+void MatOp6() {
+	float data[] = { 1,1,2,3 };
+	Mat mat1(2, 2, CV_32FC1, data);
+	cout << "mat1:\n" << mat1 << endl;
+
+	Mat mat2 = mat1.inv();
+	cout << "mat2:\n" << mat2 << endl;
+	cout << "mat1.t():\n" << mat1.t() << endl;
+	cout << "mat1+3:\n" << mat1 + 3 << endl;
+	cout << "mat1+mat2:\n" << mat1 + mat2 << endl;
+	cout << "mat1*mat2:\n" << mat1 * mat2 << endl;
+}
+
+void MatOp7() {
+	Mat img1 = imread("lenna.bmp", IMREAD_GRAYSCALE);
+
+	Mat img1f;
+	img1.convertTo(img1f, CV_32FC1);
+
+	uchar data[] = { 1,2,3,4,5,6,7,8,9,10,11,12 };
+	Mat mat1(3, 4, CV_8UC1, data);
+	Mat mat2 = mat1.reshape(0, 1);
+
+	cout << "mat1:\n" << mat1 << endl;
+	cout << "mat2:\n" << mat2 << endl;
+
+	Mat mat3 = Mat::ones(1, 4, CV_8UC1) * 255;
+	mat1.push_back(mat3);
+	cout << "mat1:\n" << mat1 << endl;
+
+	mat1.resize(6, 100);
+	cout << "mat1:\n" << mat1 << endl;
+}
+
  int main() {
 
 	 // MatOp1();
 	 // MatOp2();
-	 MatOp3();
+	 // MatOp3();
+	 // MatOp4();
+	 // MatOp5();
+	 // MatOp6();
+	 MatOp7();
 
 	return 0;
 }
