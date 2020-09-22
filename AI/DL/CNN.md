@@ -45,3 +45,26 @@ padding은 우선 테두리에다 0을 입력 만들어주게 되고 padding의 
 ![](https://github.com/bongwon-suh/TIL/blob/master/img/0922/06.JPG?raw=true)
 
 이렇게 여러개의 Convolution Layer 적용이 가능함
+
+
+
+### Pooling Layer
+
+![](https://github.com/bongwon-suh/TIL/blob/master/img/0922/07.JPG?raw=true)
+
+필터를 사용해 만들어진 conv layer에서 한 레이어만 뽑아내고, 이것을 resize 하는것을 샘플링이라 하고
+
+이것을 다시 쌓는 것 레이어를 Pooling layer 이라고 함
+
+![](https://github.com/bongwon-suh/TIL/blob/master/img/0922/08.JPG?raw=true)
+
+맥스 풀링은 가장 큰 값을 골라내는 것 
+
+
+
+### FC Layer
+
+contains neurons that connect to the entire input volume, as in ordinary Neural Networks
+
+
+
