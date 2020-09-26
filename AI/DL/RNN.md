@@ -20,23 +20,25 @@
 
 
 
+
+
 ### Vanilla Recurrent Neural Network
 
 ![](https://github.com/bongwon-suh/TIL/blob/master/img/0926/03.JPG?raw=true)
 
-입력에 대한 각각의 weight값을 만들어줌 tanh로 h값 만들고 y값 출력
+입력에 대한 각각의 weight값을 만들어준 다음 tanh로 새로운 h값과 y값 출력을 하게 된다.
 
-원핫인코딩 
 
-처음 시작은 초깃값 0
 
-예제
+### RNN applications
 
-랭귀지 모델
+- Language Modeling
+- Speech Recognition
+- Machine Translation
+- Converstation Modeling / Question Answering
+- Image/Video Captioning
+- Image/Music/Dance Generation
 
-스피치 인식
 
-봇
 
-영상 캡처
-
+![](https://github.com/bongwon-suh/TIL/blob/master/img/0926/04.JPG?raw=true)
