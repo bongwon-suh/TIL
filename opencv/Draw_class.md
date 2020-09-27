@@ -42,3 +42,47 @@ void DrawMarker(InputOutputArray img, Point position, const Scalar& color, int 	
 
 
 
+```c++
+void rectangle(InputOutputArray img, Point pt1, Point pt2, const Scalar& color, int thickness=1, int lineType=LINE_8, int shift=0);
+void rectangle(InputOutputArray img, Rect rec, const Scalar& color, int thickness=1, int lineType=LINE_8, int shift=0);
+```
+
+- pt1 : 사각형 꼭지좀 좌표
+- pt2 : pt1 과 대각 방향에 있는 사각형 꼭지점 좌표
+- rec : 사각형 위치 정보
+- color : 사각형 색상
+- thickness : 사각형 외곽선 두께
+- shift : 그리기 좌표 값의 축소 비율
+
+
+
+```c++
+void circle(InputOutputArray img, Point center, int radius, const Scalar& color, int thickness=1, int lineType=LINE_8, int shift=0);
+```
+
+- center 원의 중심
+- radius : 원의 반지름
+- color : 원 색상
+
+
+
+```c++
+void ellipse(InputOutputArray img, Point Center, Size axes, double angle, double startAngle, double endAngle, const Scalar& color, int thickness=1, int lineType=LINE_8, shift=0);
+```
+
+- axes : 타원의 반지름 Size (x축 반지름, y축 반지름)
+- angle : 타원 회전 각도 (x축 기준 시계방향)
+- startAngle : 타원 호의 시작 각도
+- endAngle : 타원 호의 끝 각도
+
+
+
+``` c++
+void polylines(InputOutputArray img, InputArrayOfArrays pts, bool isClosed, const Scalar& color, int thickness=1, lineType=LINE_8, int shift=0);
+```
+
+- pts : 다각형 외곽 점들의 좌표 배열
+- isClosed : 다각형이 닫혀 있는지를 나타내는 플래그
+
+
+
