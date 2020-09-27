@@ -86,3 +86,21 @@ void polylines(InputOutputArray img, InputArrayOfArrays pts, bool isClosed, cons
 
 
 
+```C++
+void putText(InputOutputArray img, const String& text, Point org, int fontFace, double fontScale, Scalar color, int thickness = 1, int lineType = LINE_8, bool bottomLeftOrigin = false);
+```
+
+- text : 출력할 문자열
+- org : 영상에서 문자열을 출력할 위치의 좌측 하단 좌표
+- fontFace : 폰트 종류
+- fontScale : 폰트 크기 확대/축소 비율
+- bottomLeftOrigin : true이면 영상 좌측 하단을 원점으로 간주
+
+
+
+```c++
+Size getTextSize(const String& text, int fontFace, double fontScale, int thickness, int* baseLine);
+```
+
+- baseLine : 가장 하단의 텍스트 위치를 기준으로 하는 기준선의 y좌표
+- 반환값 : 지정한 문자열 출력 시 차지하는 사각형 크기
