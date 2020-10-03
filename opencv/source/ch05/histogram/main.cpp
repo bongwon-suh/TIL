@@ -74,8 +74,29 @@ void histogram_stretching() {
 
 }
 
+void histogram_equalization() {
+	Mat src = imread("hawkes.bmp", IMREAD_GRAYSCALE);
+	if (src.empty()) {
+		cerr << "Image Load fail" << endl;
+		return;
+	}
+	
+	Mat dst;
+	equalizeHist(src, dst);
+
+	imshow("src", src);
+	imshow("srcHist", getGrayHistImage(calcGrayHist(src)));
+
+	imshow("dst", dst);
+	imshow("dstHist", getGrayHistImage(calcGrayHist(dst)));
+
+	waitKey();
+	destroyAllWindows();
+}
+
 int main() {
 	//histogram1();
-	histogram_stretching();
+	//histogram_stretching();
+	histogram_equalization();
 	return 0;
 }
