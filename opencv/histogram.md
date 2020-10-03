@@ -30,8 +30,29 @@ void calcHist(const Mat* images, int nimages, const int* channels, InputArray ma
 - ranges : 각 차원의 히스토그램 범위. 등간격 히스토그램(uniform=true), ranges[i]는 각 차원의
                  최솟값과 최댓값으로 구성된 배열이고 범위를 나타냄
                  비등간격 히스토그램이면 ranges[i] 는 각각의 구역을 나타내는 histSize[i]+1개의 원소 배열 
-- uniform : 히스토그램 빕ㅁ의 간격이 균등한지를 나타내는 플래그
+- uniform : 히스토그램 빈의 간격이 균등한지를 나타내는 플래그
 - accumulate : 누적 플래그. true이면 hist배열을 초기화하지 않고 누적하여 히스토그램을 계산
 
 
+
+### 히스토그램 스트레칭
+
+영상의 히스토그램이 그레이스케일 전 구간에 걸쳐서 나타나도록 변경하는 선형 변환 기법
+
+![](https://github.com/bongwon-suh/TIL/blob/master/img/1003/01.png?raw=true)
+
+src와 dst는 각각 입력 영상, 출력 영상, Gmin과 Gmax는 입력 영상의 픽셀 값 중에서 가장 큰 값과 작은값
+
+
+
+### 히스토그램 평활화
+
+영상의 픽셀 값 분포가 그레이스케일 전 영역에서 골고루 나타나도록 변경하는 알고리즘의 하나
+
+```c++
+void equalizeHist(InputArray src, OutputArray dst);
+```
+
+- src : 입력영상 8비트 1채널
+- dst : 출력영상
 
