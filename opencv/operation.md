@@ -59,3 +59,16 @@ void divide(InputArray src1, InputArray src2, OutputArray dst, double src=1,
 
 
 
+
+
+# 논리 연산
+
+```c++
+void bitwise_and(InputArray src1, InputArray src2,
+                 OutputArray dst, InputArray mask=noArray());
+void bitwise_or(InputArray src1, InputArray src2,
+                 OutputArray dst, InputArray mask=noArray());
+void bitwise_xor(InputArray src1, InputArray src2,
+                 OutputArray dst, InputArray mask=noArray());
+void bitwise_not(InputArray src1, OutputArray dst, InputArray mask=noArray());
+```
