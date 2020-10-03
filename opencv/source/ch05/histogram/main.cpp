@@ -51,7 +51,31 @@ void histogram1() {
 	destroyAllWindows();
 }
 
+void histogram_stretching() {
+	Mat src = imread("hawkes.bmp", IMREAD_GRAYSCALE);
+	if (src.empty()) {
+		cerr << "Image Load fail" << endl;
+		return;
+	}
+
+	double gmin, gmax;
+	minMaxLoc(src, &gmin, &gmax);
+
+	Mat dst = (src - gmin) * 255 / (gmax - gmin);
+
+	imshow("src", src);
+	imshow("srcHist", getGrayHistImage(calcGrayHist(src)));
+
+	imshow("dst", dst);
+	imshow("dstHist", getGrayHistImage(calcGrayHist(dst)));
+
+	waitKey();
+	destroyAllWindows();
+
+}
+
 int main() {
-	histogram1();
+	//histogram1();
+	histogram_stretching();
 	return 0;
 }
