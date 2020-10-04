@@ -94,3 +94,9 @@ except KeyboardInterrupt:
     GPIO.cleanup()
 ```
 
+
+
+### GPIO 핀의 상태 변경 감지
+
+- GPIO.add_event_detect(채널, GPIO.RISING, callback=my_callback)
+  - GPIO 핀의 상태가 0 또는 1 로 변경될 때 호출할 함수(my_callback)을 등록
