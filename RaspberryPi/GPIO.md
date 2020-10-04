@@ -47,3 +47,50 @@ for i in range(10):
 GPIO.cleanup()
 ```
 
+
+
+### 푸시 버튼
+
+![](https://github.com/bongwon-suh/TIL/blob/master/img/1004/02.JPG?raw=true)
+
+### ex02_Btn_Polling.py
+
+```python
+import RPi.GPIO as GPIO
+import time
+
+button_pin = 16
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+while 1:
+    if GPIO.input(button_pin)==GPIO.HIGH:
+        print("BUTTON PUSHED")
+    time.sleep(0.1)
+```
+
+### ex03_BtnLed.py
+
+```python
+#!/usr/bin/python
+import RPi.GPIO as GPIO
+import time
+
+button_pin=16
+led_pin = 18
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(led_pin, GPIO.OUT)
+
+try:
+    while 1:
+        GPIO.output(led_pin, GPIO.input(button_pin))
+        time.sleep(0.1)
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+```
+
