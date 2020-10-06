@@ -10,8 +10,6 @@
 
 ![](https://github.com/bongwon-suh/TIL/blob/master/img/1005/03.JPG?raw=true)
 
-![](https://github.com/bongwon-suh/TIL/blob/master/img/1005/04.JPG?raw=true)
-
 영상의 가장자리 픽셀에는 수식을 그대로 적용하기 어렵기 때문에 OpenCV에서 영상의 필터링을 수행할 때, 영상의 가장자리 픽셀을 확장하여 가상의 픽셀을 만든다.
 
 
@@ -41,3 +39,25 @@ void filter2D(InputArray src, OutputArray dst, int ddepth, InputArray kernel,
 
 
 
+### 블러링
+
+블러링은 영상을 부드럽게 만드는 필터링 기법이다.
+
+평균값 필터는 입력 영상에서 특정 픽셀과 주변 픽셀들의 산술 평균을 결과 영상 픽셀 값으로 설정하는 필터
+
+```c++
+void blur(InputArray src, OutputArray dst, Size ksize, Point anchor=Point(-1,-1),
+          int borderType=BORDER_DEFAULT);
+```
+
+- src : 입력 영상
+- dst : 출력영상
+- ksize : 블러링 커널 크기
+- anchor : 고정점 좌표
+- borderType : 가장자리 픽셀 확장 방식
+
+
+
+### 가우시안 필터
+
+가우시안 필터는 가우시안 분포 함수를 근사하여 생성한 필터 마스크를 사용하는 필터링 기법
