@@ -61,3 +61,6 @@ void blur(InputArray src, OutputArray dst, Size ksize, Point anchor=Point(-1,-1)
 ### 가우시안 필터
 
 가우시안 필터는 가우시안 분포 함수를 근사하여 생성한 필터 마스크를 사용하는 필터링 기법
+
+가우시안 분포는 평균을 중심으로 좌우 대칭의 종 모양을 갖는 확률 분포를 말한다.
+
