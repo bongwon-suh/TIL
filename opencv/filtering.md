@@ -60,7 +60,25 @@ void blur(InputArray src, OutputArray dst, Size ksize, Point anchor=Point(-1,-1)
 
 ### 가우시안 필터
 
-가우시안 필터는 가우시안 분포 함수를 근사하여 생성한 필터 마스크를 사용하는 필터링 기법
+```c++
+void GaussianBlur(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0,
+                  int borderType=BORDER_DEAFULT);
+```
 
-가우시안 분포는 평균을 중심으로 좌우 대칭의 종 모양을 갖는 확률 분포를 말한다.
+- src : 입력 영상
+- dst : 출력 영상
+- ksize : 가우시안 커널 크기
+- sigmaX : x 방향으로 가우시안 커널 표준 편차
+- sigmaY : y 방향으로의 가우시안 커널 표준 편차
+- borderType : 가장자리 픽셀 확장 방식
 
+
+
+```c++
+Mat getGaussianKernel(int ksize, double sigma, int ktype=CV_64F);
+```
+
+- ksize : 커널 크기
+- sigma : 가우시안 표준 편차
+- ktype : 필터의 타입
+- 반환값 : kszie*1 크기의 가우시안 필터 커널
