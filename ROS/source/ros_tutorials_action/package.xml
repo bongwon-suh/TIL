@@ -3,6 +3,9 @@
   <name>ros_tutorials_action</name>
   <version>0.0.0</version>
   <description>The ros_tutorials_action package</description>
+  <license>BSD</license>
+  <author>bongwon</author>
+  <maintainer email="spwsbw@gmail.com">Bongwon</maintainer>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>actionlib</build_depend>
   <build_depend>actionlib_msgs</build_depend>
