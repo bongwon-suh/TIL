@@ -135,3 +135,5 @@ OPENCV
 ROS
 
 ROS+ARDUINO
+
+ROS+Raspberry
