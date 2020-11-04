@@ -127,23 +127,3 @@
 [ML source](https://github.com/bongwon-suh/TIL/tree/master/AI/ML/20200913)
 
 - Logistic Classification
-
-
-
-OPENCV
-
-ROS
-
-ROS+ARDUINO
-
-ROS+Raspberry
-
-ROS+Raspberry+sonar
-
-project
-
-project arduino-raspberry-mogodb
-
-wbs
-
-web
