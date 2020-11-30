@@ -128,10 +128,3 @@
 
 - Logistic Classification
 
-그래프
-
-웹서버완성하기
-
-프로미니 업로드
-
-핀번호 정리
